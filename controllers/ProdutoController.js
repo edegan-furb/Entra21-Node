@@ -7,11 +7,10 @@ const ProdutoController = {
       // Pega uma referência para a coleção 'categorias'
       const categoriasRef = db.collection("categorias");
       // Busca a categoria com o ID fornecido na requisição
-      const categoriaSnapshot = await categoriasRef
-        .doc(req.body.id_categorias)
-        .get();
+      const categoriaDocRef = categoriasRef.doc(req.body.id_categorias);
 
       // Verifica se a categoria existe
+      const categoriaSnapshot = await categoriaDocRef.get();
       if (!categoriaSnapshot.exists) {
         return res.status(404).send({ message: "categoria não encontrada" });
       }
@@ -25,7 +24,7 @@ const ProdutoController = {
       await produtoRef.set({
         nome: req.body.nome,
         preço: req.body.preço,
-        id_categorias: req.body.id_categorias,
+        id_categorias: categoriaDocRef,
       });
 
       // Constrói o objeto de resposta com informações sobre o produto criado
@@ -67,7 +66,7 @@ const ProdutoController = {
           id_produto: produtoRef.id,
           nome: produtoData.nome,
           preço: produtoData.preço,
-          id_categorias: produtoData.id_categorias,
+          id_categorias: produtoData.id_categorias.id,
           request: {
             tipo: "GET",
             descrição: "Obter produto por ID",
@@ -101,7 +100,7 @@ const ProdutoController = {
           id_produto: produtoDoc.id,
           nome: produtoData.nome,
           preço: produtoData.preço,
-          id_categorias: produtoData.id_categorias,
+          id_categorias: produtoData.id_categorias.id,
           request: {
             tipo: "GET",
             descrição: "Obter detalhes deste produto",
@@ -120,11 +119,12 @@ const ProdutoController = {
     try {
       // Cria uma referência para a coleção 'categorias'
       const categoriasRef = db.collection("categorias");
+      // Busca a categoria com o ID fornecido na requisição
+      const categoriaDocRef = categoriasRef.doc(req.body.id_categorias);
+
       // Verifica se a categoria existe
-      const categoriaDoc = await categoriasRef
-        .doc(req.body.id_categorias)
-        .get();
-      if (!categoriaDoc.exists) {
+      const categoriaSnapshot = await categoriaDocRef.get();
+      if (!categoriaSnapshot.exists) {
         return res.status(404).send({ message: "Categoria não encontrada" });
       }
 
@@ -140,7 +140,7 @@ const ProdutoController = {
       await produtoRef.update({
         nome: req.body.nome,
         preço: req.body.preço,
-        id_categorias: req.body.id_categorias,
+        id_categorias: categoriaDocRef,
       });
 
       // Constrói o objeto de resposta com informações sobre o produto atualizado
@@ -150,7 +150,7 @@ const ProdutoController = {
           id_produto: req.params.id,
           nome: req.body.nome,
           preço: req.body.preço,
-          id_categorias: req.body.id_categorias,
+          id_categorias: req.body.id_categorias.id,
           request: {
             tipo: "GET",
             descrição: "Obter produto por ID",
