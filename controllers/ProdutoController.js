@@ -39,7 +39,7 @@ const ProdutoController = {
           request: {
             tipo: "GET",
             descrição: "Obter produto por ID",
-            URL: `http://localhost:3000/products/${produtoRef.id}`,
+            URL: `http://localhost:3000/produtos/${produtoRef.id}`,
           },
         },
       };
@@ -146,7 +146,7 @@ const ProdutoController = {
       // Constrói o objeto de resposta com informações sobre o produto atualizado
       const response = {
         mensagem: "Produto atualizado com sucesso",
-        productAtualizado: {
+        produtoAtualizado: {
           id_produto: req.params.id,
           nome: req.body.nome,
           preço: req.body.preço,
@@ -154,7 +154,7 @@ const ProdutoController = {
           request: {
             tipo: "GET",
             descrição: "Obter produto por ID",
-            URL: `http://localhost:3000/products/${req.params.id}`,
+            URL: `http://localhost:3000/produtos/${req.params.id}`,
           },
         },
       };
