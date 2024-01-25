@@ -48,6 +48,8 @@ $ node app.js
 
 - [Cloud-Firestore](https://firebase.google.com/docs/firestore) - Flexible, scalable database.
 - [Node](https://nodejs.org/en) -  JavaScript runtime environment.
+- [Express](https://expressjs.com/) -  Framework that provides a robust set of features.
+- [JavaScript](https://www.w3schools.com/js/) - Programming language.
 
 ## Acknowledgments
 
