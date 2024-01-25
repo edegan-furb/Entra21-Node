@@ -2,7 +2,7 @@ const db = require("../firebaseConfig");
 
 const ProdutoController = {
   // Adiciona um novo produto no sistema
-  criarProduto: async (req, res) => {
+  createProduto: async (req, res) => {
     try {
       // Pega uma referência para a coleção 'categorias'
       const categoriasRef = db.collection("categorias");
@@ -23,8 +23,8 @@ const ProdutoController = {
 
       // Define os dados do novo produto com as informações recebidas
       await produtoRef.set({
-        name: req.body.nome,
-        price: req.body.preço,
+        nome: req.body.nome,
+        preço: req.body.preço,
         id_categorias: req.body.id_categorias,
       });
 
@@ -49,12 +49,32 @@ const ProdutoController = {
     }
   },
 
+  // Retornar todos os produtos
   getAllProdutos: async (req, res) => {
     try {
+      // Busca todos os documentos na coleção 'produtos'
+
       const produtosSnapshot = await db.collection("produtos").get();
+
+      // Cria um array vazio para armazenar os dados dos produtos.
       const produtos = [];
-      produtosSnapshot.forEach((doc) => {
-        produtos.push({ id: doc.id, ...doc.data() });
+
+      // Itera sobre cada documento
+      produtosSnapshot.forEach((produtoRef) => {
+        // Extrai os dados do produto
+        const produtoData = produtoRef.data();
+        // Adiciona os dados do produto ao array
+        produtos.push({
+          id_produto: produtoRef.id,
+          nome: produtoData.nome,
+          preço: produtoData.preço,
+          id_categorias: produtoData.id_categorias,
+          request: {
+            tipo: "GET",
+            descrição: "Obter produto por ID",
+            URL: `http://localhost:3000/produtos/${produtoRef.id}`,
+          },
+        });
       });
       res.status(200).json(produtos);
     } catch (error) {
