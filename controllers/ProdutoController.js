@@ -115,13 +115,52 @@ const ProdutoController = {
     }
   },
 
+  // Atualiza as informações de um produto
   updateProduto: async (req, res) => {
     try {
+      // Cria uma referência para a coleção 'categorias'
+      const categoriasRef = db.collection("categorias");
+      // Verifica se a categoria existe
+      const categoriaDoc = await categoriasRef
+        .doc(req.body.id_categorias)
+        .get();
+      if (!categoriaDoc.exists) {
+        return res.status(404).send({ message: "Categoria não encontrada" });
+      }
+
+      // Cria uma referência nos produtos usando o id
       const produtoRef = db.collection("produtos").doc(req.params.id);
-      await produtoRef.update(req.body);
-      res.status(200).send("Produto atualizado com sucesso");
+      // Verifica se o produto existe
+      const produtoDoc = await produtoRef.get();
+      if (!produtoDoc.exists) {
+        return res.status(404).send({ message: "Produto não encontrado" });
+      }
+
+      // Atualiza o produto com as novas informações
+      await produtoRef.update({
+        nome: req.body.nome,
+        preço: req.body.preço,
+        id_categorias: req.body.id_categorias,
+      });
+
+      // Constrói o objeto de resposta com informações sobre o produto atualizado
+      const response = {
+        mensagem: "Produto atualizado com sucesso",
+        productAtualizado: {
+          id_produto: req.params.id,
+          nome: req.body.nome,
+          preço: req.body.preço,
+          id_categorias: req.body.id_categorias,
+          request: {
+            tipo: "GET",
+            descrição: "Obter produto por ID",
+            URL: `http://localhost:3000/products/${req.params.id}`,
+          },
+        },
+      };
+      res.status(200).send(response);
     } catch (error) {
-      res.status(500).send(error.message);
+      res.status(500).send({ error: error.message });
     }
   },
 
