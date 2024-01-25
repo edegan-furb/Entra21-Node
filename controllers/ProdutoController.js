@@ -85,27 +85,27 @@ const ProdutoController = {
   getProdutoById: async (req, res) => {
     try {
       // Cria uma referência nos produtos usando o id
-      const produtosRef = db.collection("produtos").doc(req.params.id);
+      const produtoRef = db.collection("produtos").doc(req.params.id);
 
       // Busca os dados do produto
-      const produtoRef = await produtosRef.get();
+      const produtoDoc = await produtoRef.get();
 
       // Verifica se o produto existe.
-      if (!produtoRef.exists) {
+      if (!produtoDoc.exists) {
         res.status(404).send("Produto não encontrado");
       } else {
         // Extrai os dados do produto.
-        const produtoData = produtoRef.data();
+        const produtoData = produtoDoc.data();
         // Constrói a resposta com os dados do produto
         const response = {
-          id_produto: produtoRef.id,
+          id_produto: produtoDoc.id,
           nome: produtoData.nome,
           preço: produtoData.preço,
           id_categorias: produtoData.id_categorias,
           request: {
             tipo: "GET",
             descrição: "Obter detalhes deste produto",
-            URL: `http://localhost:3000/produtos/${produtoRef.id}`,
+            URL: `http://localhost:3000/produtos/${produtoDoc.id}`,
           },
         };
         res.status(200).json(response);
@@ -166,9 +166,34 @@ const ProdutoController = {
 
   deleteProduto: async (req, res) => {
     try {
+      // Cria uma referência nos produtos usando o id
       const produtoRef = db.collection("produtos").doc(req.params.id);
+
+      // Verifica se o produto existe
+      const produtoDoc = await produtoRef.get();
+      if (!produtoDoc.exists) {
+        return res.status(404).send({ message: "Produto não encontrado" });
+      }
+
+      // Deleta o produto
       await produtoRef.delete();
-      res.status(200).send("Produto deletado com sucesso");
+
+      // Constrói o objeto de resposta
+      const response = {
+        message: "Produto deletado com sucesso",
+        request: {
+          tipo: "POST",
+          descrição: "Criar produto",
+          URL: "http://localhost:3000/produtos/",
+          body: {
+            nome: "String",
+            preço: "Number",
+            id_categorias: "String",
+          },
+        },
+      };
+
+      res.status(200).send(response);
     } catch (error) {
       res.status(500).send(error.message);
     }
