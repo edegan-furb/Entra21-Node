@@ -3,24 +3,30 @@ const db = require('../firebaseConfig');
 const EntradaController = {
     createEntrada: async (req, res) => {
         try {
+            // Pega uma referência para a coleção 'produtos'
             const produtosRef = db.collection('produtos');
 
+            // Busca o produto com o ID fornecido na requisição
             const produtoDocRef = produtosRef.doc(req.body.id_produto);
 
-
+            // Verifica se o produto existe
             const produtoSnapshot = await produtoDocRef.get();
             if (!produtoSnapshot.exists) {
                 return res.status(404).send({ message: "Produto não encontrado" });
             }
 
 
+            // Pega uma referência para a coleção 'entradas'
+            // Cria um novo documento entrada na coleção 'entrada'
             const entradaRef = db.collection('entradas').doc();
+            // Define os dados do nova entrada com as informações recebidas
             await entradaRef.set({
                 id_produto: produtoDocRef,
                 data: new Date(req.body.data),
                 quantidade: req.body.quantidade
             });
 
+            // Constrói o objeto de resposta com informações sobre a entrada criada
             const response = {
                 mensagem: "Entrada inserida com sucesso",
                 produtoCriado: {

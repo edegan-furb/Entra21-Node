@@ -3,24 +3,29 @@ const db = require('../firebaseConfig');
 const SaidaController = {
     createSaida: async (req, res) => {
         try {
+            // Pega uma referência para a coleção 'produtos'
             const produtosRef = db.collection('produtos');
 
+            // Busca o produto com o ID fornecido na requisição
             const produtoDocRef = produtosRef.doc(req.body.id_produto);
 
-
+            // Verifica se o produto existe
             const produtoSnapshot = await produtoDocRef.get();
             if (!produtoSnapshot.exists) {
                 return res.status(404).send({ message: "Produto não encontrado" });
             }
 
-
+            // Pega uma referência para a coleção 'saidas'
+            // Cria um novo documento saida na coleção 'saida'
             const saidaRef = db.collection('saidas').doc();
+            // Define os dados do nova saida com as informações recebidas
             await saidaRef.set({
                 id_produto: produtoDocRef,
                 data: new Date(req.body.data),
                 quantidade: req.body.quantidade
             });
 
+            // Constrói o objeto de resposta com informações sobre a saida criada
             const response = {
                 mensagem: "Saida inserida com sucesso",
                 produtoCriado: {
