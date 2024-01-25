@@ -33,7 +33,7 @@ const EntradaController = {
                     id_entrada: entradaRef.id,
                     data: req.body.data,
                     quantidade: req.body.quantidade,
-                    id_produto: req.body.produtoDocRef,
+                    id_produto: req.body.id_produto,
                     request: {
                         tipo: "GET",
                         descrição: "Obter entrada por ID",
