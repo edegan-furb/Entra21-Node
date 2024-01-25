@@ -1,11 +1,42 @@
 const db = require('../firebaseConfig');
 
-const saidaController = {
+const SaidaController = {
     createSaida: async (req, res) => {
         try {
+            const produtosRef = db.collection('produtos');
+
+            const produtoDocRef = produtosRef.doc(req.body.id_produto);
+
+
+            const produtoSnapshot = await produtoDocRef.get();
+            if (!produtoSnapshot.exists) {
+                return res.status(404).send({ message: "Produto não encontrado" });
+            }
+
+
             const saidaRef = db.collection('saidas').doc();
-            await saidaRef.set(req.body);
-            res.status(201).json({ id: saidaRef.id, ...req.body });
+            await saidaRef.set({
+                id_produto: produtoDocRef,
+                data: new Date(req.body.data),
+                quantidade: req.body.quantidade
+            });
+
+            const response = {
+                mensagem: "Saida inserida com sucesso",
+                produtoCriado: {
+                    id_saida: saidaRef.id,
+                    data: req.body.data,
+                    quantidade: req.body.quantidade,
+                    id_produto: req.body.produtoDocRef,
+                    request: {
+                        tipo: "GET",
+                        descrição: "Obter saida por ID",
+                        URL: `http://localhost:3000/saidas/${saidaRef.id}`,
+                    },
+                },
+            };
+
+            res.status(201).json({ response });
         } catch (error) {
             res.status(500).send(error.message);
         }
@@ -13,10 +44,30 @@ const saidaController = {
 
     getAllSaidas: async (req, res) => {
         try {
-            const saidasSnapshot = await db.collection('saidas').get();
+            // Busca todos os documentos na coleção 'saidas'
+            const saidasSnapshot = await db.collection("saidas").get();
+
+            // Cria um array vazio para armazenar os dados dos saidas.
             const saidas = [];
-            saidasSnapshot.forEach(doc => {
-                saidas.push({ id: doc.id, ...doc.data() });
+
+            // Itera sobre cada documento
+            saidasSnapshot.forEach((saidaRef) => {
+                // Extrai os dados do produto
+                const saidaData = saidaRef.data();
+                // Convertendo o timestamp do Firestore para JavaScript Date
+                const dataFormatted = saidaData.data.toDate().toISOString().split('T')[0];
+                // Adiciona os dados do produto ao array
+                saidas.push({
+                    id_saida: saidaRef.id,
+                    data: dataFormatted,
+                    quantidade: saidaData.quantidade,
+                    id_produto: saidaData.id_produto.id,
+                    request: {
+                        tipo: "GET",
+                        descrição: "Obter saida por ID",
+                        URL: `http://localhost:3000/saidas/${saidaRef.id}`,
+                    },
+                });
             });
             res.status(200).json(saidas);
         } catch (error) {
@@ -26,12 +77,33 @@ const saidaController = {
 
     getSaidaById: async (req, res) => {
         try {
-            const saidaRef = db.collection('saidas').doc(req.params.id);
-            const doc = await saidaRef.get();
-            if (!doc.exists) {
-                res.status(404).send('saida não encontrada');
+            // Cria uma referência nos saidas usando o id
+            const saidaRef = db.collection("saidas").doc(req.params.id);
+
+            // Busca os dados do saida
+            const saidaDoc = await saidaRef.get();
+
+            // Verifica se o saida existe.
+            if (!saidaDoc.exists) {
+                res.status(404).send("saida não encontrado");
             } else {
-                res.status(200).json({ id: doc.id, ...doc.data() });
+                // Extrai os dados do saida.
+                const saidaData = saidaDoc.data();
+                // Convertendo o timestamp do Firestore para JavaScript Date
+                const dataFormatted = saidaData.data.toDate().toISOString().split('T')[0];
+                // Constrói a resposta com os dados do saida
+                const response = {
+                    id_saida: saidaDoc.id,
+                    data: dataFormatted,
+                    quantidade: saidaData.quantidade,
+                    id_produto: saidaData.id_produto.id,
+                    request: {
+                        tipo: "GET",
+                        descrição: "Obter detalhes deste saida",
+                        URL: `http://localhost:3000/saidas/${saidaDoc.id}`,
+                    },
+                };
+                res.status(200).json(response);
             }
         } catch (error) {
             res.status(500).send(error.message);
@@ -40,23 +112,87 @@ const saidaController = {
 
     updateSaida: async (req, res) => {
         try {
-            const saidaRef = db.collection('saidas').doc(req.params.id);
-            await saidaRef.update(req.body);
-            res.status(200).send('saida atualizada com sucesso');
+            // Cria uma referência para a coleção 'produtos'
+            const produtosRef = db.collection("produtos");
+            // Busca a produto com o ID fornecido na requisição
+            const produtoDocRef = produtosRef.doc(req.body.id_produto);
+
+            // Verifica se a produto existe
+            const produtoSnapshot = await produtoDocRef.get();
+            if (!produtoSnapshot.exists) {
+                return res.status(404).send({ message: "Produto não encontrado" });
+            }
+
+            // Cria uma referência nos Saidas usando o id
+            const saidaRef = db.collection("saidas").doc(req.params.id);
+            // Verifica se o saida existe
+            const saidaDoc = await saidaRef.get();
+            if (!saidaDoc.exists) {
+                return res.status(404).send({ message: "Saida não encontrada" });
+            }
+
+            // Atualiza o saida com as novas informações
+            await saidaRef.update({
+                id_produto: produtoDocRef,
+                data: new Date(req.body.data),
+                quantidade: req.body.quantidade
+            });
+
+            // Constrói o objeto de resposta com informações sobre o saida atualizado
+            const response = {
+                mensagem: "Saida atualizada com sucesso",
+                produtoCriado: {
+                    id_saida: req.params.id,
+                    data: req.body.data,
+                    quantidade: req.body.quantidade,
+                    id_produto: req.body.id_produto.id,
+                    request: {
+                        tipo: "GET",
+                        descrição: "Obter saida por ID",
+                        URL: `http://localhost:3000/saidas/${saidaRef.id}`,
+                    },
+                },
+            };
+            res.status(200).send(response);
         } catch (error) {
-            res.status(500).send(error.message);
+            res.status(500).send({ error: error.message });
         }
     },
 
     deleteSaida: async (req, res) => {
         try {
-            const saidaRef = db.collection('saidas').doc(req.params.id);
+            // Cria uma referência nos saidas usando o id
+            const saidaRef = db.collection("saidas").doc(req.params.id);
+
+            // Verifica se o saida existe
+            const saidaDoc = await saidaRef.get();
+            if (!saidaDoc.exists) {
+                return res.status(404).send({ message: "Saida não encontrado" });
+            }
+
+            // Deleta o saida
             await saidaRef.delete();
-            res.status(200).send('saida deletada com sucesso');
+
+            // Constrói o objeto de resposta
+            const response = {
+                message: "saida deletado com sucesso",
+                request: {
+                    tipo: "POST",
+                    descrição: "Criar saida",
+                    URL: "http://localhost:3000/saidas/",
+                    body: {
+                        id_produto: "String",
+                        data: "Date",
+                        quantidade: "Number",
+                    },
+                },
+            };
+
+            res.status(200).send(response);
         } catch (error) {
             res.status(500).send(error.message);
         }
-    }
+    },
 };
 
-module.exports = saidaController;
+module.exports = SaidaController;
