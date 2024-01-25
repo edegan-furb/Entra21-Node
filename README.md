@@ -1,4 +1,4 @@
-#Entra21-Node
+# Entra21-Node
  </p>
   <p>
   <a href="https://github.com/edegan-furb/Entra21-Node/graphs/contributors">
@@ -17,8 +17,8 @@
 <table>
 <tr>
 <td>
-"This project involves developing an API using Firebase, focused on implementing CRUD (Create, Read, Update, Delete) operations for managing products, categories, entries, and exits. 
-The aim is to create a system that allows for data manipulation and retrieval. The project will leverage Firebase's capabilities."
+This project involves developing an API using Firebase, focused on implementing CRUD (Create, Read, Update, Delete) operations for managing products, categories, entries, and exits. 
+The aim is to create a system that allows for data manipulation and retrieval. The project will leverage Firebase's capabilities.
 </td>
 </tr>
 </table>
