@@ -53,7 +53,6 @@ const ProdutoController = {
   getAllProdutos: async (req, res) => {
     try {
       // Busca todos os documentos na coleção 'produtos'
-
       const produtosSnapshot = await db.collection("produtos").get();
 
       // Cria um array vazio para armazenar os dados dos produtos.
@@ -82,14 +81,34 @@ const ProdutoController = {
     }
   },
 
+  // Retornar um produto pelo seu ID.
   getProdutoById: async (req, res) => {
     try {
-      const produtoRef = db.collection("produtos").doc(req.params.id);
-      const doc = await produtoRef.get();
-      if (!doc.exists) {
+      // Cria uma referência nos produtos usando o id
+      const produtosRef = db.collection("produtos").doc(req.params.id);
+
+      // Busca os dados do produto
+      const produtoRef = await produtosRef.get();
+
+      // Verifica se o produto existe.
+      if (!produtoRef.exists) {
         res.status(404).send("Produto não encontrado");
       } else {
-        res.status(200).json({ id: doc.id, ...doc.data() });
+        // Extrai os dados do produto.
+        const produtoData = produtoRef.data();
+        // Constrói a resposta com os dados do produto
+        const response = {
+          id_produto: produtoRef.id,
+          nome: produtoData.nome,
+          preço: produtoData.preço,
+          id_categorias: produtoData.id_categorias,
+          request: {
+            tipo: "GET",
+            descrição: "Obter detalhes deste produto",
+            URL: `http://localhost:3000/produtos/${produtoRef.id}`,
+          },
+        };
+        res.status(200).json(response);
       }
     } catch (error) {
       res.status(500).send(error.message);
