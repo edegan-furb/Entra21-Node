@@ -1,0 +1,1819 @@
+{
+	"info": {
+		"_postman_id": "8fe614f3-e750-4c8e-9a0e-03fbf7263ccb",
+		"name": "NodeFirebase Copy",
+		"description": "Documentação da API pública Produtos demostrando os endpoints da API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16202736",
+		"_collection_link": "https://orange-eclipse-489627.postman.co/workspace/Entra21~1bf17355-8f29-4762-ba21-29c2016a016d/collection/16202736-8fe614f3-e750-4c8e-9a0e-03fbf7263ccb?action=share&source=collection_link&creator=16202736"
+	},
+	"item": [
+		{
+			"name": "produtos",
+			"item": [
+				{
+					"name": "http://localhost:3000/produtos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"goiaba\",\r\n    \"preço\": 1.99,\r\n    \"id_categorias\": \"NfbazJ9Q07zSCrPzgS9h\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/produtos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"goiaba\",\r\n    \"preço\": 1.99,\r\n    \"id_categorias\": \"NfbazJ9Q07zSCrPzgS9h\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/produtos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "301",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12d-z2dFQH63nLtcHFvz5uY8QVGOIHU\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 16:31:36 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"mensagem\": \"Produto inserido com sucesso\",\n        \"produtoCriado\": {\n            \"id_produto\": \"OmuFcrSqbI1xDr3xFDRd\",\n            \"nome\": \"goiaba\",\n            \"preço\": 1.99,\n            \"id_categorias\": \"NfbazJ9Q07zSCrPzgS9h\",\n            \"request\": {\n                \"tipo\": \"GET\",\n                \"descrição\": \"Obter produto por ID\",\n                \"URL\": \"http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/produtos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/produtos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/produtos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "230",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e6-7B1s1X/l8wItW4LPrGZRkXJTVEA\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 16:34:06 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_produto\": \"OmuFcrSqbI1xDr3xFDRd\",\n        \"nome\": \"goiaba\",\n        \"preço\": 1.99,\n        \"id_categorias\": \"NfbazJ9Q07zSCrPzgS9h\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter produto por ID\",\n            \"URL\": \"http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/produtos/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"OmuFcrSqbI1xDr3xFDRd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/produtos/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"produtos",
+										"OmuFcrSqbI1xDr3xFDRd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "236",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ec-bNrePNzyfMhCyqQgSIRK7GvqJeA\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 16:35:08 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_produto\": \"OmuFcrSqbI1xDr3xFDRd\",\n    \"nome\": \"goiaba\",\n    \"preço\": 1.99,\n    \"id_categorias\": \"NfbazJ9Q07zSCrPzgS9h\",\n    \"request\": {\n        \"tipo\": \"GET\",\n        \"descrição\": \"Obter detalhes deste produto\",\n        \"URL\": \"http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/produtos/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"asdfg\",\r\n    \"preço\": 43,\r\n    \"id_categorias\": \"NfbazJ9Q07zSCrPzgS9h\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"OmuFcrSqbI1xDr3xFDRd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/produtos/:id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"nome\": \"asdfg\",\r\n    \"preço\": 43,\r\n    \"id_categorias\": \"NfbazJ9Q07zSCrPzgS9h\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"produtos",
+										"OmuFcrSqbI1xDr3xFDRd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "252",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fc-yd7DR8I4Pf6ntGeUZw28ZsP4Tbs\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 16:39:16 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensagem\": \"Produto atualizado com sucesso\",\n    \"produtoAtualizado\": {\n        \"id_produto\": \"OmuFcrSqbI1xDr3xFDRd\",\n        \"nome\": \"asdfg\",\n        \"preço\": 43,\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter produto por ID\",\n            \"URL\": \"http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/produtos/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"produtos",
+								"OmuFcrSqbI1xDr3xFDRd"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/produtos/:id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/produtos/OmuFcrSqbI1xDr3xFDRd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"produtos",
+										"OmuFcrSqbI1xDr3xFDRd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ce-rYtO5pHft3VJLKezVoYxNwB8H1c\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 16:39:47 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Produto deletado com sucesso\",\n    \"request\": {\n        \"tipo\": \"POST\",\n        \"descrição\": \"Criar produto\",\n        \"URL\": \"http://localhost:3000/produtos/\",\n        \"body\": {\n            \"nome\": \"String\",\n            \"preço\": \"Number\",\n            \"id_categorias\": \"String\"\n        }\n    }\n}"
+						}
+					]
+				}
+			],
+			"description": "Rota para criar um novo produto  \nRota para obter todos os produtos  \nRota para obter um produto pelo ID  \nRota para atualizar um produto  \nRota para deletar um produto"
+		},
+		{
+			"name": "entradas",
+			"item": [
+				{
+					"name": "http://localhost:3000/entradas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 20\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/entradas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entradas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/entradas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 20\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/entradas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"entradas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "268",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"10c-8VORKRVBWnqm8YgVyzMXMetOrOg\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 16:50:09 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"mensagem\": \"Entrada inserida com sucesso\",\n        \"produtoCriado\": {\n            \"id_entrada\": \"zoUGWBRKcpNxb9rijhFm\",\n            \"data\": \"2024-01-25\",\n            \"quantidade\": 20,\n            \"request\": {\n                \"tipo\": \"GET\",\n                \"descrição\": \"Obter entrada por ID\",\n                \"URL\": \"http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/entradas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/entradas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entradas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/entradas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/entradas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"entradas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e9-bxihEHnMqKxExVCf7qHpgxkbEdk\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 16:58:02 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_entrada\": \"zoUGWBRKcpNxb9rijhFm\",\n        \"data\": \"2024-01-25\",\n        \"quantidade\": 20,\n        \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter entrada por ID\",\n            \"URL\": \"http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/entradas/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entradas",
+								"zoUGWBRKcpNxb9rijhFm"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/entradas/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"entradas",
+										"zoUGWBRKcpNxb9rijhFm"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "239",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ef-CpSx18nijMUafARnn9cG05475Zs\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:02:59 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_entrada\": \"zoUGWBRKcpNxb9rijhFm\",\n    \"data\": \"2024-01-25\",\n    \"quantidade\": 20,\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\n    \"request\": {\n        \"tipo\": \"GET\",\n        \"descrição\": \"Obter detalhes deste entrada\",\n        \"URL\": \"http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/entradas/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entradas",
+								"zoUGWBRKcpNxb9rijhFm"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/entradas/:id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"entradas",
+										"zoUGWBRKcpNxb9rijhFm"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "257",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"101-4Zw3JsOVf4bheycUCfUqwdoPUy0\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:08:29 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensagem\": \"Entrada atualizada com sucesso\",\n    \"produtoCriado\": {\n        \"id_entrada\": \"zoUGWBRKcpNxb9rijhFm\",\n        \"data\": \"2024-01-25\",\n        \"quantidade\": 10,\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter entrada por ID\",\n            \"URL\": \"http://localhost:3000/entradas/zoUGWBRKcpNxb9rijhFm\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/entradas/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/entradas/zjz1RW1U4OW1v20LfjDg",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"entradas",
+								"zjz1RW1U4OW1v20LfjDg"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/entradas/:id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/entradas/zjz1RW1U4OW1v20LfjDg",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"entradas",
+										"zjz1RW1U4OW1v20LfjDg"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-c1qLCz6ANo3EGT9lTjFubhUy7Ho\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:25:09 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Entrada deletado com sucesso\",\n    \"request\": {\n        \"tipo\": \"POST\",\n        \"descrição\": \"Criar entrada\",\n        \"URL\": \"http://localhost:3000/entradas/\",\n        \"body\": {\n            \"id_produto\": \"String\",\n            \"data\": \"Date\",\n            \"quantidade\": \"Number\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "saidas",
+			"item": [
+				{
+					"name": "http://localhost:3000/saidas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 324\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/saidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"saidas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/saidas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 10\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/saidas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"saidas"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-PohBSfhPmtIzu2iUax/AYZ/1g8s\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:18:33 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"mensagem\": \"Saida inserida com sucesso\",\n        \"produtoCriado\": {\n            \"id_saida\": \"pNDyzLjGSDwA2T2vcGtQ\",\n            \"data\": \"2024-01-25\",\n            \"quantidade\": 10,\n            \"request\": {\n                \"tipo\": \"GET\",\n                \"descrição\": \"Obter saida por ID\",\n                \"URL\": \"http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/saidas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/saidas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"saidas"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/saidas",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/saidas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"saidas"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "453",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c5-6fqry0Xk4ePhhblbLUYBpF9MWss\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:19:46 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_saida\": \"YJjBYOaDCmJMsfwW8po1\",\n        \"data\": \"2024-01-25\",\n        \"quantidade\": 14,\n        \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter saida por ID\",\n            \"URL\": \"http://localhost:3000/saidas/YJjBYOaDCmJMsfwW8po1\"\n        }\n    },\n    {\n        \"id_saida\": \"pNDyzLjGSDwA2T2vcGtQ\",\n        \"data\": \"2024-01-25\",\n        \"quantidade\": 10,\n        \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter saida por ID\",\n            \"URL\": \"http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/saidas/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"saidas",
+								"pNDyzLjGSDwA2T2vcGtQ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/saidas/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"saidas",
+										"pNDyzLjGSDwA2T2vcGtQ"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "233",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e9-R80aAS0uUm92VvIi2URJkSRD6Ao\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:20:12 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_saida\": \"pNDyzLjGSDwA2T2vcGtQ\",\n    \"data\": \"2024-01-25\",\n    \"quantidade\": 10,\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\n    \"request\": {\n        \"tipo\": \"GET\",\n        \"descrição\": \"Obter detalhes deste saida\",\n        \"URL\": \"http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/saidas/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"saidas",
+								"pNDyzLjGSDwA2T2vcGtQ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/saidas/:id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id_produto\": \"JDfwDhcbZjXyOz2cCkes\",\r\n    \"data\": \"2024-01-25\",\r\n    \"quantidade\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"saidas",
+										"pNDyzLjGSDwA2T2vcGtQ"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "248",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f8-z770+eHjKlKly5JWNzD85363jRo\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:21:31 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensagem\": \"Saida atualizada com sucesso\",\n    \"produtoCriado\": {\n        \"id_saida\": \"pNDyzLjGSDwA2T2vcGtQ\",\n        \"data\": \"2024-01-25\",\n        \"quantidade\": 1,\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter saida por ID\",\n            \"URL\": \"http://localhost:3000/saidas/pNDyzLjGSDwA2T2vcGtQ\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/saidas/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/saidas/nGy2AFVZZkhPR7sYrZwl",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"saidas",
+								"nGy2AFVZZkhPR7sYrZwl"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/saidas/:id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/saidas/nGy2AFVZZkhPR7sYrZwl",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"saidas",
+										"nGy2AFVZZkhPR7sYrZwl"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-VFZlBe1ulmG7+5G5gg/Haq09JXM\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:24:34 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"saida deletado com sucesso\",\n    \"request\": {\n        \"tipo\": \"POST\",\n        \"descrição\": \"Criar saida\",\n        \"URL\": \"http://localhost:3000/saidas/\",\n        \"body\": {\n            \"id_produto\": \"String\",\n            \"data\": \"Date\",\n            \"quantidade\": \"Number\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "categorias",
+			"item": [
+				{
+					"name": "http://localhost:3000/categorias",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"categoria\": \"limpeza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/categorias",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"categoria\": \"limpeza\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/categorias",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categorias"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "264",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"108-tjaNE5oqB0OVlqSAchQFd7BdQhs\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:47:39 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"response\": {\n        \"mensagem\": \"Categoria inserida com sucesso\",\n        \"categoriaCriada\": {\n            \"id_categoria\": \"SmPwiy4uFnnAzVdN1Fpw\",\n            \"categoria\": \"limpeza\",\n            \"request\": {\n                \"tipo\": \"GET\",\n                \"descrição\": \"Obter categoria por ID\",\n                \"URL\": \"http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw\"\n            }\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categorias",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/categorias",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/categorias",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categorias"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2029",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7ed-yVII624MFD6ay/QXlumK2ynQMrU\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:47:58 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id_categoria\": \"1NgkGkWKnP2bhvyjjeZ6\",\n        \"categoria\": \"hyyjjy\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/1NgkGkWKnP2bhvyjjeZ6\"\n        }\n    },\n    {\n        \"id_categoria\": \"NfbazJ9Q07zSCrPzgS9h\",\n        \"categoria\": \"fruta\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/NfbazJ9Q07zSCrPzgS9h\"\n        }\n    },\n    {\n        \"id_categoria\": \"RB6ls0XzBC4O7YkYwnIZ\",\n        \"categoria\": \"f5\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/RB6ls0XzBC4O7YkYwnIZ\"\n        }\n    },\n    {\n        \"id_categoria\": \"SmPwiy4uFnnAzVdN1Fpw\",\n        \"categoria\": \"limpeza\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw\"\n        }\n    },\n    {\n        \"id_categoria\": \"T0CKUv1zBGYLYfFS3tZN\",\n        \"categoria\": \"d4\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/T0CKUv1zBGYLYfFS3tZN\"\n        }\n    },\n    {\n        \"id_categoria\": \"aoAVIlPlWtUASYVfGEYo\",\n        \"categoria\": \"g6\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/aoAVIlPlWtUASYVfGEYo\"\n        }\n    },\n    {\n        \"id_categoria\": \"gO7XeAWvlXvuU5I2vE5p\",\n        \"categoria\": \"b2\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/gO7XeAWvlXvuU5I2vE5p\"\n        }\n    },\n    {\n        \"id_categoria\": \"kl47OpBOUAPFBDdb27Gi\",\n        \"categoria\": \"a1\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/kl47OpBOUAPFBDdb27Gi\"\n        }\n    },\n    {\n        \"id_categoria\": \"qaoh4PyxV9RfHcTcx1Nj\",\n        \"categoria\": \"gr\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/qaoh4PyxV9RfHcTcx1Nj\"\n        }\n    },\n    {\n        \"id_categoria\": \"ssWFKAMQzuYZ8mN0vbRD\",\n        \"categoria\": \"c3\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/ssWFKAMQzuYZ8mN0vbRD\"\n        }\n    },\n    {\n        \"id_categoria\": \"vw7y0tnuH5NXD6ftUatT\",\n        \"categoria\": \"geger\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/vw7y0tnuH5NXD6ftUatT\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/categorias/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"SmPwiy4uFnnAzVdN1Fpw"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/categorias/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categorias",
+										"SmPwiy4uFnnAzVdN1Fpw"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bb-uwMTMplFrNPjZPfhdPUnmeiq13k\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:48:12 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id_categoria\": \"SmPwiy4uFnnAzVdN1Fpw\",\n    \"categoria\": \"limpeza\",\n    \"request\": {\n        \"tipo\": \"GET\",\n        \"descrição\": \"Obter categoria por ID\",\n        \"URL\": \"http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/categorias/:id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoria\": \"atualizado\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"SmPwiy4uFnnAzVdN1Fpw"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/categorias/:id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"categoria\": \"atualizado\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categorias",
+										"SmPwiy4uFnnAzVdN1Fpw"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-KyNUtI+LAu0a9qmWWtBNiPtHD8E\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:48:46 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"mensagem\": \"Categoria atualizado com sucesso\",\n    \"categoriaAtualizado\": {\n        \"id_categoria\": \"SmPwiy4uFnnAzVdN1Fpw\",\n        \"categoria\": \"atualizado\",\n        \"request\": {\n            \"tipo\": \"GET\",\n            \"descrição\": \"Obter categoria por ID\",\n            \"URL\": \"http://localhost:3000/categorias/SmPwiy4uFnnAzVdN1Fpw\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "http://localhost:3000/categorias/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/categorias/RB6ls0XzBC4O7YkYwnIZ",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categorias",
+								"RB6ls0XzBC4O7YkYwnIZ"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "http://localhost:3000/categorias/:id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/categorias/RB6ls0XzBC4O7YkYwnIZ",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categorias",
+										"RB6ls0XzBC4O7YkYwnIZ"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "174",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ae-mO1zydyEwcPyxAlbpcgcWO1Iug8\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 25 Jan 2024 17:50:34 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Categoria deletado com sucesso\",\n    \"request\": {\n        \"tipo\": \"POST\",\n        \"descrição\": \"Criar categoria\",\n        \"URL\": \"http://localhost:3000/categorias/\",\n        \"body\": {\n            \"categoria\": \"String\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
