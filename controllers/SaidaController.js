@@ -150,7 +150,7 @@ const SaidaController = {
                     id_saida: req.params.id,
                     data: req.body.data,
                     quantidade: req.body.quantidade,
-                    id_produto: req.body.id_produto.id,
+                    id_produto: req.body.id_produto,
                     request: {
                         tipo: "GET",
                         descrição: "Obter saida por ID",
